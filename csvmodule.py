@@ -11,7 +11,7 @@ class csvwriter:
 			fhandle = writer(fcsv,delimiter =",",quotechar = "|",
 							quoting=QUOTE_MINIMAL)
 			fhandle.writerow(bdetals)
-			fcsv.close()
+		fcsv.close()
 
 				
 if __name__ == '__main__':

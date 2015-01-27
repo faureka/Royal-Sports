@@ -10,14 +10,14 @@ class PartyDetails():
 		self.datetoday = None
 
 
-	def detailsparty(self,PartyName):
+	def detailsparty(self,PartyName,searchby):
 		if os.path.isfile("main\BillDetails.csv"):
 			with open("main\BillDetails.csv","r") as fcsv:
 				fhandle = csv.reader(fcsv,delimiter = ",")
 				for row in fhandle:
-					if row[0].lower() == PartyName.lower():
+					if row[searchby].lower() == PartyName.lower():
 						self.flag = True
-						self.detailparty.append(tuple(row[1:6]))
+						self.detailparty.append(tuple(row))
 			fcsv.close()
 			if not self.flag:
 				return 0
